@@ -15,7 +15,7 @@ namespace ListBox
     {
         static string titulo = "Listas dinámicas";
         int l = titulo.Length - 1;
-        int j = 0;
+        bool rep = true;
 
         public Form1()
         {
@@ -28,9 +28,9 @@ namespace ListBox
 
         private void button1_Click(object sender, EventArgs e)  //añadir
         {
-            if(textBox1.Text.Trim(' ').Length > 0 && !listBox1.Items.Contains(textBox1.Text))
+            if(textBox1.Text.Trim().Length > 0 && !listBox1.Items.Contains(textBox1.Text))
             {
-                listBox1.Items.Add(textBox1.Text.Trim(' '));
+                listBox1.Items.Add(textBox1.Text.Trim());
                 label2.Text = listBox1.Items.Count.ToString();
                 textBox1.Text = "";
             }
@@ -96,16 +96,9 @@ namespace ListBox
                 this.Text = this.Text.Insert(0, titulo[l].ToString());
                 l--;
                 if(this.Text.Length % 2 == 0)
-                {
-                    if(j <= 1)
-                    {
-                        this.Icon = j == 0? Resources.icon1 : Resources.icon2;
-                        j++;
-                    }
-                    else
-                    {
-                        j = 0;
-                    }
+                {                 
+                    this.Icon = rep? Resources.icon1 : Resources.icon2;
+                    rep = !rep;                               
                 }                
             }
             else
