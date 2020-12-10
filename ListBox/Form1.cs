@@ -16,6 +16,7 @@ namespace ListBox
         static string titulo = "Listas dinámicas";
         int l = titulo.Length - 1;
         bool rep = true;
+        bool vuelta = true;
 
         public Form1()
         {
@@ -64,6 +65,7 @@ namespace ListBox
                     listBox2.Items.Insert(i, listBox1.SelectedItems[i]);                    
                 }
                 eliminarItemsSeleccionados();
+                toolTip1.SetToolTip(listBox2, listBox2.Items.Count.ToString());
             }
         }
 
@@ -74,6 +76,7 @@ namespace ListBox
                 listBox1.Items.Insert(0, listBox2.SelectedItem);
                 listBox2.Items.Remove(listBox2.SelectedItem);
                 label2.Text = listBox1.Items.Count.ToString();
+                toolTip1.SetToolTip(listBox2, listBox2.Items.Count.ToString());
             }
         }
 
@@ -94,8 +97,9 @@ namespace ListBox
             if(this.Text.Length < titulo.Length)
             {
                 this.Text = this.Text.Insert(0, titulo[l].ToString());
+                //this.Text = titulo[l] + this.Text;
                 l--;
-                if(this.Text.Length % 2 == 0)
+                if(vuelta)
                 {                 
                     this.Icon = rep? Resources.icon1 : Resources.icon2;
                     rep = !rep;                               
@@ -105,7 +109,15 @@ namespace ListBox
             {
                 this.Text = "";
                 l = titulo.Length - 1;
-            }            
+            }
+            vuelta = !vuelta;
         }
+
+        //private void listBox2_MouseEnter(object sender, EventArgs e)
+        //{
+        //    //ListBox listB = (ListBox)sender;
+        //    toolTip1.SetToolTip(listBox2, listBox2.Items.Count.ToString());
+        //}
+        //ASI NON FUNCIONA COMO TOOLTIP --> RESPONDE A EVENTOS DE RATON
     }
 }

@@ -47,6 +47,7 @@ namespace ListBox
             this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // listBox1
@@ -61,6 +62,7 @@ namespace ListBox
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox1.Size = new System.Drawing.Size(170, 134);
             this.listBox1.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.listBox1, "Lista A");
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
@@ -70,6 +72,7 @@ namespace ListBox
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(169, 134);
             this.listBox2.TabIndex = 9;
+            this.toolTip1.SetToolTip(this.listBox2, "0");
             // 
             // button1
             // 
@@ -78,6 +81,7 @@ namespace ListBox
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
             this.button1.Text = "Aña&dir";
+            this.toolTip1.SetToolTip(this.button1, "Añadir a lista A");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -89,6 +93,7 @@ namespace ListBox
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 14;
             this.button2.Text = "&Quitar";
+            this.toolTip1.SetToolTip(this.button2, "Quitar de lista A");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -99,6 +104,7 @@ namespace ListBox
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 7;
             this.button3.Text = "&A -> B";
+            this.toolTip1.SetToolTip(this.button3, "Traspasar elementos de A a B");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -109,6 +115,7 @@ namespace ListBox
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 10;
             this.button4.Text = "A <- &B";
+            this.toolTip1.SetToolTip(this.button4, "Traspasar elemento de B a A");
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -118,6 +125,7 @@ namespace ListBox
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(211, 20);
             this.textBox1.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.textBox1, "Inserta elemento en lista A");
             // 
             // label1
             // 
@@ -170,6 +178,7 @@ namespace ListBox
             this.label6.Size = new System.Drawing.Size(156, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Número de elementos de lista A";
+            this.toolTip1.SetToolTip(this.label6, "Elementos Lista A");
             // 
             // label7
             // 
@@ -179,6 +188,7 @@ namespace ListBox
             this.label7.Size = new System.Drawing.Size(112, 13);
             this.label7.TabIndex = 2;
             this.label7.Text = "Índices seleccionados";
+            this.toolTip1.SetToolTip(this.label7, "Índices seleccionados de la Lista A");
             // 
             // timer1
             // 
@@ -242,6 +252,7 @@ namespace ListBox
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
